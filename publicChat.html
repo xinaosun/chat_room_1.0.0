@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FSE Chat Room</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div class="chat-div">
+			<h1>FSE Chat Room</h1>
+			<div class="chat-name">You are currently logged in as <b><span></span></b>.</div>
+			<button type = "button" class="logout_button">Logout</button>
+			<div class="chat-messages"></div>
+			<textarea class="chat-textarea" placeholder="Type your message"></textarea>
+			<div class="chat-status">Status: <span>Idle</span></div>
+		</div>
+        <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+		<script src="js/client.js"></script>
+		
+	</body>
+</html>

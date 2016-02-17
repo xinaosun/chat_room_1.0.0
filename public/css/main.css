@@ -1,0 +1,130 @@
+body {
+	font: 13px "Trebuchet MS", sans-serif;
+	background-color: #ededed;
+}
+
+.login-div {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: center;
+    max-width: 400px;
+}
+
+.user-name {
+	width: 60%;
+	max-width: 60%;
+	margin-top: 10px;
+}
+
+.user-password {
+	width: 60%;
+	max-width: 60%;
+	margin-top: 10px;
+}
+
+.login_button {
+	width: 60%;
+	max-width: 60%;
+	margin-top: 10px;
+}
+
+.login-status {
+	color: #555;
+	margin-top: 10px;
+}
+
+.chat-div {
+    margin-top: 100px;
+	max-width: 400px;
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.chat-name {
+	width: 65%;
+	max-width: 65%;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.logout-button {
+	max-width: 35%;
+	margin-bottom: 10px;
+	margin-right: -20px;
+	float: right;
+}
+
+.chat-messages,
+.chat-textarea {
+	border: 1px solid #bbb;
+}
+
+.chat-messages {
+	clear: both;
+	width: 100%;
+	height: 400px;
+	overflow-y: scroll;
+	padding: 10px;
+	background-color: #fff;
+}
+
+.chat-message,
+.chat-message-name,
+.chat-message-timestamp,
+.chat-announcement,
+.chat-announce-timestamp {
+	margin-bottom: 10px;
+}
+
+.chat-message-name,
+.chat-message-timestamp {
+	width: 50%;
+	color: #555;
+}
+
+.chat-message {
+	clear: both;
+	margin-left: 10px;
+}
+
+.chat-message-name {
+	float: left;
+	font-size: 1.3em;
+}
+
+.chat-message-timestamp {
+	float: right;
+	text-align: right;
+}
+
+.chat-announcement,
+.chat-announce-timestamp {
+	width: 50%;
+	max-width: 50%;
+	color: #555;
+}
+
+.chat-announcement {
+	clear: both;
+	float: left;
+}
+
+.chat-announce-timestamp {
+	float: right;
+	text-align: right;
+}
+
+.chat-textarea {
+	width: 100%;
+	padding: 10px;
+	border-top: 0;
+	margin: 0;
+	max-width: 100%;
+	outline: none;
+}
+
+.chat-status {
+	color: #555;
+}
