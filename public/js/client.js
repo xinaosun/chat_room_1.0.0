@@ -21,11 +21,6 @@
 		return datestring.concat(" ", timestring);
 	};
 
-
-   
-
-
-   
 	socket.on("login-result", function(data) {
 		//console.log(data);
 		if(data.pass) {
@@ -33,29 +28,20 @@
        		getNode(".chat-div").style.display = "block";
        		//getNode(".signup-div").style.display = "block";
 
-       		
-
     		console.log("Name = " + data.name);
    	  		execute_chatroom(data.name);
 		} else {
 			location.reload();
-		//	getNode(".login-status").textContent = data.message;
 		}
 	});
-
-
 
     // Listen for keydown
     var user_name = getNode(".user-name");
     var user_password = getNode(".user-password");
-
     var new_user_name = getNode(".new-user-name");
     var new_user_password = getNode(".new-user-password"); 
-
     var signup = getNode(".signup-div");
     var login = getNode(".login_button");
-
-
     var logout = getNode(".logout_button");
     /*
     signup.addEventListener("click",function(event){
@@ -87,8 +73,10 @@
 		status = getNode(".chat-status span");
 		messages = getNode(".chat-messages");
 		textarea = getNode('.chat-textarea');
+        listOfUsers = getNode(".users-list");
 		statusDefault = status.textContent;
 
+        // status object
 		setStatus = function(s) {
 			status.textContent = s;
 			if (s !== statusDefault) {
@@ -148,6 +136,25 @@
 				}
 			});
             
+            // Listten for List of Users
+            socket.on("output", function(data) {
+				console.log(data);
+				if(data.length) {
+					// Loop through results if data is not empty
+					for(var x = data.length-1; x > -1; x = x - 1) {
+						var message_name = document.createElement('div');
+						message_name.setAttribute('class', 'chat-message-name');
+						message_name.textContent = data[x].name;
+						var message = document.createElement('div');
+						message.setAttribute('class', 'chat-message');
+						message.textContent = data[x].message;
+						listOfUsers.appendChild(message_name);
+//						messages.appendChild(message_timestamp);
+//						messages.appendChild(message);
+						listOfUsers.scrollTop = listOfUsers.scrollHeight;
+					}
+				}
+			});
             
 			// Listen for a status
 			socket.on("status", function(data) {

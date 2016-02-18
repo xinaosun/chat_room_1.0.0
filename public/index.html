@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>FSE Chat Room</title>
+		<title>SSN Chat</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
+    
 	<body>
-        
-        
-
         <div class="login-div">
             <h1>Welcome to SSN</h1>
-            
              <input type="text" class="user-name" placeholder="Enter your name">
              <input type="password" class="user-password" placeholder="Enter your password">
-             <button type = "button" class="login_button">Login</button>
-            
-            <div class="login-status"></div>
+            <button type = "button" class="login_button">Login</button>
         </div>
 
 		<div class="chat-div">
-			<div class="chat-name">You are currently logged in as <b><span></span></b>.</div>
-			<button type = "button" class="logout_button">Logout</button>
+			<div class="chat-name">Current User: <b><span></span></b></div>
 			<div class="chat-messages"></div>
 			<textarea class="chat-textarea" placeholder="Type your message"></textarea>
-			<div class="chat-status">Status: <span>Idle</span></div>
+            <div class="users-list">Here is the list of users</div>
+			<body class = "below-textarea">
+            <div class="chat-status">Status: <span>Idle</span></div>
+            <button type = "button" class="logout_button">Leave the Chatroom</button>
+            </body>
 		</div>
+        
         <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
 		<script src="js/client.js"></script>
-		
+        
 	</body>
 </html>

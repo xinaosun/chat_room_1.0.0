@@ -3,6 +3,12 @@ body {
 	background-color: #ededed;
 }
 
+/*
+.below-textarea{
+    display:inline
+}
+*/
+
 .login-div {
     margin-left: auto;
     margin-right: auto;
