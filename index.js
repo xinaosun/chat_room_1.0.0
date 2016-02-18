@@ -58,34 +58,42 @@ client.on("connection", function(socket) {
             });
 
 */
-/*
+
              
-            var stmt = "SELECT User FROM UserData WHERE User='"+name+"'";
-            db_msg.all(stmt, function(err, rows) {
+            var stmt = "SELECT User FROM UserData WHERE User=?";
+            db_msg.all(stmt, name, function(err, rows) {
 
                 if (err) throw err;
                 if (rows.length == 0) {
-                	socket.emit("newuser", {newuser:true});
+                	socket.emit("login-result", {pass:true, name:data.name});
                 	//socket.emit("login-result", {pass:true, name:data.name});
                 	//location.path('/signup');
-                	/*
+                	
                 	db_msg.serialize(function() {
 			           db_msg.run("INSERT INTO UserData VALUES(?, ?)", 
 			           password, name);
-		            });*/
-           /*     }
+		            });
+                }
                 else {
-                	console.log(rows[0]);
-                	socket.emit("login-result", {pass:true, name:data.name});
+                	
+                	//socket.emit("login-result", {pass:true, name:data.name});
+                	db_msg.all("SELECT User, Password FROM UserData WHERE User=? and Password=?", 
+                		name, password, function(err, rows) {
+                		if (rows.length == 0) {
+                			socket.emit("login-result", {pass:false, name:data.name});
+                		} else {
+                			socket.emit("login-result", {pass:true, name:data.name});
+                		}
+                	});
                 }
                // db_msg.close();
             });
 
             //verify if new then 
 
-*/
 
-			socket.emit("login-result", {pass:true, name:data.name});
+
+			//socket.emit("login-result", {pass:true, name:data.name});
 			console.log(data.password);
 		//}
 	});

@@ -36,7 +36,7 @@
    
 	socket.on("login-result", function(data) {
 		//console.log(data);
-		//if(data.pass) {
+		if(data.pass) {
        		getNode(".login-div").style.display = "none";
        		getNode(".chat-div").style.display = "block";
        		//getNode(".signup-div").style.display = "block";
@@ -45,10 +45,10 @@
 
     		console.log("Name = " + data.name);
    	  		execute_chatroom(data.name);
-		//} else {
-			//location.reload();
+		} else {
+			location.reload();
 		//	getNode(".login-status").textContent = data.message;
-		//}
+		}
 	});
 
 
