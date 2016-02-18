@@ -1,13 +1,4 @@
 
-/*
-(function() {
-	// return the query selector corresponding to the string passed through
-	// Don't have to use jQuery to select values
-	
-
-*/  
-   
-
 	var getNode = function(s) {
 		return document.querySelector(s);
 	};
@@ -188,5 +179,3 @@
 			chat_name.textContent = name;
 		}
     }
-
-//})();
