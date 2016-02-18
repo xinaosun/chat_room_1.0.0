@@ -1,17 +1,8 @@
-
 	var getNode = function(s) {
 		return document.querySelector(s);
 	};
     
-    //returns current time
-	var current_time = function() {
-		var d = new Date(Date.now());
-		var datestring = d.toLocaleDateString();
-		var timestring = d.toLocaleTimeString();
-		return datestring.concat(" ", timestring);
-	};
-
-	//try {
+    	//try {
 	var socket = io.connect("http://127.0.0.1:3000");
 	//} catch(e) {
 	//	console.log("Can't connect...");
@@ -21,6 +12,16 @@
        	getNode(".chat-div").style.display = "none";
        //	getNode(".signup-div").style.display = "none";
     });
+
+    //current_time will reflect the current system of local user
+	var current_time = function() {
+		var d = new Date(Date.now());
+		var datestring = d.toLocaleDateString();
+		var timestring = d.toLocaleTimeString();
+		return datestring.concat(" ", timestring);
+	};
+
+
    
 
 
